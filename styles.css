@@ -72,7 +72,8 @@ a:hover {
 }
 
 .about {
-  line-height: 24px;
+  font-size: 20px;
+  line-height: 30px;
   margin-bottom: 30px;
 }
 

@@ -19,19 +19,17 @@
     <h1>Josephus problem</h1>
     <br>
     <div class="about">
-      One hundred people are standing in a circle, numbered 1-100. Person #1 has a sword. He kills the next person (i.e. Person #2) and gives the sword to the next surviving person (i.e. Person #3). This goes on until only one person remains. Who survives at the end?
-    </div>
+      One hundred people are standing in a circle, numbered 1-100. Person #1 has a sword. He kills the next person (i.e. Person #2) and gives the sword to the next surviving person (i.e. Person #3). This goes on until only one person remains. Who survives at the end?<br><br>
+ 
 
-    <form onsubmit="josephus()">
-  <label for="quantity">Number of People:</label>
-  <input type="tel">
-  <input type="submit">
-</form>
-
+  Number of people: <input type="tel" placeholder=100 name="a" id="a">
+  <button onclick="josephus(document.getElementById('a').value)">Submit</button>
+  <br><br>
     <div class="answer">
-      Answer: 10 people
+      Answer: Person #73
     </div>
 <br>
+   </div>
 <div class="code">
 <h1>Code</h1>
 <pre><code>
@@ -97,6 +95,35 @@ int main(int argc, char** argv) {
 <script>
 
 function josephus(n) {
+
+
+console.log('hi');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 }
 
