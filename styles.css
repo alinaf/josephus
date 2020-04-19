@@ -17,7 +17,7 @@ body {
 }
 
 input, select, textarea {
-    font-size: 25px;
+    font-size: 20px;
 }
 
 .container {
@@ -27,7 +27,7 @@ input, select, textarea {
 }
 @media (max-width: 600px) {
   .container {
-    padding: 5px;
+    padding: 20px;
     margin: 0px;
   }
 }
@@ -51,7 +51,7 @@ a:hover {
 }
 
 .button {
-  font-size: 25px;
+  font-size: 20px;
 }
 
 @media (max-width: 600px) {
