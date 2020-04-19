@@ -16,6 +16,10 @@ body {
   background-color: #aaa8f9;
 }
 
+input, select, textarea {
+    font-size: 20px;
+}
+
 .container {
   margin: 50px auto;
   padding: 5px;
