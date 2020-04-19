@@ -27,7 +27,7 @@ input, select, textarea {
 }
 @media (max-width: 600px) {
   .container {
-    padding: 20px;
+    padding: 5px;
     margin: 0px;
   }
 }
