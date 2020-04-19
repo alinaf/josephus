@@ -25,7 +25,7 @@
   Number of people: <input type="tel" placeholder=100 name="a" id="a">
   <button onclick="josephus(document.getElementById('a').value)">Submit</button>
   <br><br>
-    <div class="answer">
+    <div id="answer">
       Answer: Person #73
     </div>
 <br>
@@ -33,57 +33,26 @@
 <div class="code">
 <h1>Code</h1>
 <pre><code>
-#include <iostream>
-#include <vector>
-#include <algorithm>
+function josephus(n) {
+  const n1 = {value: 1, next: null};
+  let temp = n1;
 
-using namespace std;
-
-class Node {
-public:
-  Node(int key) {
-    this->next = nullptr;
-    this->key = key;
+  for(i = 2; i <= n; i++) {
+    temp.next = {value: i, next: null};
+    temp = temp.next;
   }
 
-    Node *next;
-    int key;
-};
-
-int main(int argc, char** argv) {
-
-  int n = 0;
-
-  if(argc == 2) {
-    n = atoi(argv[1]);
-  } else {
-    cout << "Enter a number of people";
-    return 0;
-  }
-
-  Node* n1 = new Node(1);
-  Node* temp = n1;
-
-  for(int i = 2; i <= n; i++) {
-    temp->next = new Node(i);
-    temp = temp->next;
-  }
-
-  int numElements = n;
-
-  temp->next = n1; // circular
-  temp = n1; // starting
+  numElements = n;
+  temp.next = n1; // circular
+  temp = n1; // start at person 1
 
   while(numElements > 1) {
-    Node* toDelete = temp->next;
-    temp->next = temp->next->next;
-    delete toDelete;
+    temp.next = temp.next.next;
     numElements--;
-    temp = temp->next;
+    temp = temp.next;
   }
 
-  cout << temp->key << endl;
-  delete temp;
+  console.log(temp.value);
 }
 
 </code></pre>
@@ -96,35 +65,26 @@ int main(int argc, char** argv) {
 
 function josephus(n) {
 
+const n1 = {value: 1, next: null};
+let temp = n1;
 
-console.log('hi');
+for(i = 2; i <= n; i++) {
+  temp.next = {value: i, next: null};
+  temp = temp.next;
+}
 
+numElements = n;
+temp.next = n1;
+temp = n1;
 
+while(numElements > 1) {
+  temp.next = temp.next.next;
+  numElements--;
+  temp = temp.next;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+document.getElementById('answer').innerHTML = "Answer: Person #" + temp.value;
+alert('person ' + temp.value + ' wins');
 }
 
 
