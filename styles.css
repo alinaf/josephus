@@ -25,10 +25,12 @@ input, select, textarea {
   padding: 5px;
   max-width: 650px;
 }
-@media (max-width: 600px) {
+
+@media only screen and (max-device-width: 480px) {
   .container {
-    padding: 20px;
-    margin: 0px;
+    margin: 5px;
+    padding: 5px;
+    max-width: none;
   }
 }
 
