@@ -22,7 +22,7 @@
       One hundred people are standing in a circle, numbered 1-100. Person #1 has a sword. He kills the next person (i.e. Person #2) and gives the sword to the next surviving person (i.e. Person #3). This goes on until only one person remains. Who survives at the end?
     </div>
 
-    <form onsubmit="myFunction()">
+    <form onsubmit="josephus()">
   <label for="quantity">Number of People:</label>
   <input type="tel">
   <input type="submit">
@@ -95,10 +95,6 @@ int main(int argc, char** argv) {
 </body>
 </html>
 <script>
-
-function myFunction() {
-  alert("hi");
-}
 
 function josephus(n) {
 
