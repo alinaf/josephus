@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>alinaf</title>
+  <meta
+  name="description"
+  content="Josephus problem"
+  />
+  <link rel="icon" 
+      type="image/png" 
+      href="img/favicon.png">
+
+  <link
+  href="https://fonts.googleapis.com/css?family=Roboto+Mono"
+  rel="stylesheet"
+  />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+
+<body>
+  <div class="container">
+    <h1>Josephus problem</h1>
+    <br>
+    <div class="about">
+      One hundred people are standing in a circle, numbered 1-100. Person #1 has a sword. He kills the next person (i.e. Person #2) and gives the sword to the next surviving person (i.e. Person #3). This goes on until only one person remains. Who survives at the end?
+    </div>
+
+    <form onsubmit="myFunction()">
+  <label for="quantity">Number of People:</label>
+  <input type="number" id="quantity" name="quantity" min="1" max="100">
+  <input type="submit">
+</form>
+
+    <div class="answer">
+      Answer: 10 people
+    </div>
+<br>
+<div class="code">
+<h1>Code</h1>
+<pre><code>
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+using namespace std;
+
+class Node {
+public:
+  Node(int key) {
+    this->next = nullptr;
+    this->key = key;
+  }
+
+    Node *next;
+    int key;
+};
+
+int main(int argc, char** argv) {
+
+  int n = 0;
+
+  if(argc == 2) {
+    n = atoi(argv[1]);
+  } else {
+    cout << "Enter a number of people";
+    return 0;
+  }
+
+  Node* n1 = new Node(1);
+  Node* temp = n1;
+
+  for(int i = 2; i <= n; i++) {
+    temp->next = new Node(i);
+    temp = temp->next;
+  }
+
+  int numElements = n;
+
+  temp->next = n1; // circular
+  temp = n1; // starting
+
+  while(numElements > 1) {
+    Node* toDelete = temp->next;
+    temp->next = temp->next->next;
+    delete toDelete;
+    numElements--;
+    temp = temp->next;
+  }
+
+  cout << temp->key << endl;
+  delete temp;
+}
+
+</code></pre>
+</div>
+</div>
+
+</body>
+</html>
+<script>
+
+function josephus(int n) {
+
+}
+
+
+</script>
